@@ -10,7 +10,7 @@ public class Getpropertiesfile {
 	public static void main(String[] args) throws IOException {
 		// TODO Auto-generated method stub
 		Properties obj=new Properties();
-		FileInputStream fileobj=new FileInputStream("D:\\workspace\\learnjava\\testdata.properties");
+		FileInputStream fileobj=new FileInputStream(System.getProperty("user.dir")+"\\testdata.properties");
 		obj.load(fileobj);
 		System.out.println(obj.getProperty("username"));
 		System.out.println(obj.getProperty("password"));	
