@@ -14,7 +14,7 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 public class ApachePoi {
 
-	public static void main(String[] args) throws IOException, InterruptedException {
+	public static void main(String[] args) throws IOException, InterruptedException, InvalidFormatException {
 		// TODO Auto-generated method stub
 		fileinto();
 		Thread.sleep(2000);
@@ -52,8 +52,9 @@ public class ApachePoi {
 		
 		FileInputStream filein=new FileInputStream(xlfile);
 		
-		Workbook wb= new XSSFWorkbook(filein);
+		//FileInputStream filein=new FileInputStream(xlfile);
 		
+		Workbook wb= new XSSFWorkbook(xlfile);		
 		Sheet xlsheet= wb.getSheet("Sheet1");
 		int rowcount=xlsheet.getLastRowNum()-xlsheet.getFirstRowNum();
 		System.out.println(rowcount+"count");
